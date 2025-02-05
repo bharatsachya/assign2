@@ -2,10 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { User, userSchema } from './schemas'
-import { PrismaClient } from '@prisma/client'
-
-// Initialize Prisma Client
-const prisma = new PrismaClient()
+import prisma from '@/lib/prisma'
 
 // Function to search users by name
 export async function searchUsers(query: string): Promise<User[]> {
