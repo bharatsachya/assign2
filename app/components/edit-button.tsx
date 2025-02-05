@@ -20,10 +20,15 @@ export default function EditButton({ user }: EditButtonProps) {
 
   return (
     <>
-      <Button onClick={handleEditClick} variant="outline">
+     
+     {
+      !isDialogOpen && (
+        <Button onClick={handleEditClick} variant="outline">
         <Pencil className="w-4 h-4 mr-2" />
         Edit
-      </Button>
+       </Button>
+      )
+     }
 
       {/* Render the edit dialog when isDialogOpen is true */}
       {isDialogOpen && (
